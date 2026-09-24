@@ -77,22 +77,36 @@ export default function Plan() {
         <p className={`text-5xl font-extrabold ${v.tono === 'no' ? 'text-rojo' : v.tono === 'si' ? 'text-verde' : 'text-naranja'}`}>{Math.round(p.valor * 100)}%</p>
         <p className="font-bold mt-1">{v.texto}</p>
         <p className="mt-1">{fraseSimple(p.valor)}</p>
+        <div className="mt-3 rounded-lg bg-arena p-3 text-sm">
+          <p className="font-bold">Lo que tienes que decirle a quien decide</p>
+          <ul className="list-disc pl-5 mt-1 space-y-1">
+            <li>Con la baja realista (−25%), <b>ni con las {d.meta.eligible} rutas y 2 años</b> la probabilidad llega a la mitad. Solo bajas grandes se ven con claridad.</li>
+            <li>Más de la mitad de los choques con microbús pasan en rutas que no están en los datos abiertos: este programa solo mide los corredores.</li>
+            <li>No hay evidencia en México de que los pasajeros se animen a hablarle al chofer (en el Edomex, 8 de cada 10 robos en transporte son con violencia). Lo primero que un piloto real tendría que averiguar es eso.</li>
+          </ul>
+        </div>
         <p className="text-xs text-neutral-600 mt-2">
-          <span className="etiqueta">SIMULACIÓN</span> Monte Carlo sobre el registro real (500 programas simulados con {p.rutasSimuladas} rutas, prueba de permutación al 5%).
+          <span className="etiqueta">SIMULACIÓN</span> Cómo se calculó: Monte Carlo sobre el registro real (500 programas simulados con {p.rutasSimuladas} rutas, prueba de permutación al 5%).
           No es una promesa de resultado: dice cuánto alcanza a ver el registro. Con 1–2 años antes como línea base.
         </p>
       </section>
 
       <section>
         <h2 className="text-xl font-bold">Asignación al azar</h2>
-        <p className="text-sm text-neutral-700 max-w-3xl">
-          Las rutas se juntan en pares parecidos (1 con 2, 3 con 4…) y una moneda decide cuál lleva calcomanía. Así nadie escoge «sus» rutas.
-          La semilla hace que cualquiera pueda repetir el volado y obtener lo mismo.
+        <p className="max-w-3xl">
+          Tomamos las <b>{n} rutas con más riesgo</b> del mapa (las mismas, en el mismo orden), las juntamos en pares parecidos (la 1 con la 2, la 3 con la 4…)
+          y un volado decide cuál de cada par lleva calcomanía. <b>La otra se queda sin calcomanía para poder comparar</b>: sin ese grupo no sabrías si los choques bajaron por la calcomanía o por otra cosa.
         </p>
-        <label className="block mt-2 font-semibold" htmlFor="semilla">Semilla</label>
+        {asig && (
+          <p className="mt-2 rounded-lg bg-amarillo/60 p-3 max-w-3xl">
+            <b>Empieza por la columna «Lleva calcomanía»:</b> {asig.calcomania.slice(0, 5).map((id) => d.rutas.find((r) => r.id === id).short).join(', ')}…
+            {' '}Las marcadas con ● están entre las 10 rojas del mapa.
+          </p>
+        )}
+        <label className="block mt-3 font-semibold" htmlFor="semilla">Número del sorteo</label>
         <input id="semilla" inputMode="numeric" maxLength={9} value={semillaTxt} onChange={(e) => setSemillaTxt(e.target.value.replace(/\D/g, ''))}
           className="mt-1 h-11 w-40 rounded-lg border border-neutral-400 px-3" aria-describedby="semilla-ayuda" />
-        <p id="semilla-ayuda" className="text-xs text-neutral-600">Solo números, hasta 9 dígitos.</p>
+        <p id="semilla-ayuda" className="text-xs text-neutral-600">Guárdalo: con el mismo número cualquiera puede repetir el sorteo y comprobar que no escogiste tus rutas. Solo números, hasta 9 dígitos.</p>
         {asig ? (
           <>
             <table className="mt-3 w-full text-sm tarjeta p-0 overflow-hidden">
@@ -101,8 +115,8 @@ export default function Plan() {
                 {asig.pares.map((par) => (
                   <tr key={par.par} className="border-t border-arena">
                     <td className="p-2">{par.par}</td>
-                    <td className="p-2 font-semibold">{par.calcomania.short}</td>
-                    <td className="p-2">{par.control.short}</td>
+                    <td className="p-2 font-semibold">{par.calcomania.short}{par.calcomania.rank <= 10 ? ' ●' : ''}</td>
+                    <td className="p-2">{par.control.short}{par.control.rank <= 10 ? ' ●' : ''}</td>
                   </tr>
                 ))}
               </tbody>

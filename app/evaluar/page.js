@@ -27,15 +27,15 @@ export default function Evaluar() {
   return (
     <div className="space-y-5">
       <div className="rounded-xl border-2 border-rojo bg-[#fbeee9] p-4">
-        <p className="font-extrabold text-rojo">PLACEBO: nadie puso calcomanías.</p>
-        <p className="text-sm mt-1">Todavía no hay un programa en la calle. Esta página corre la evaluación sobre choques <b>reales</b> con una fecha de inicio <b>inventada</b>, para que veas cómo se ve «sin efecto». Si alguna vez te sale «bajaron» aquí, es el azar, y por eso siempre se compara contra el intervalo.</p>
+        <p className="font-extrabold text-rojo">ENSAYO SIN CALCOMANÍAS (prueba de control, «placebo»)</p>
+        <p className="text-sm mt-1">Todavía no hay calcomanías en la calle. Esta página usa choques <b>reales</b> con una fecha de inicio <b>inventada</b>, para enseñarte cómo se ve un resultado cuando no hubo ningún efecto. Cualquier diferencia que veas aquí es puro azar. Cuando haya un programa real, se evalúa igual.</p>
       </div>
       <h1 className="text-2xl font-extrabold">¿Funcionó? Compara contra rutas sin calcomanía.</h1>
       <div className="tarjeta flex flex-wrap gap-4 items-end">
         <label>Rutas<select value={n} onChange={(e) => setN(Number(e.target.value))} className="block h-11 rounded-lg border border-neutral-400 px-2">
           {[10, 20, 30, 40, 60, d.meta.eligible - (d.meta.eligible % 2)].map((x) => <option key={x} value={x}>{x}</option>)}
         </select></label>
-        <label>Semilla<input inputMode="numeric" maxLength={9} value={semillaTxt} onChange={(e) => setSemillaTxt(e.target.value.replace(/\D/g, ''))} className="block h-11 w-28 rounded-lg border border-neutral-400 px-2" /></label>
+        <label>Número del sorteo<input inputMode="numeric" maxLength={9} value={semillaTxt} onChange={(e) => setSemillaTxt(e.target.value.replace(/\D/g, ''))} className="block h-11 w-28 rounded-lg border border-neutral-400 px-2" /></label>
         <label>Inicio (inventado)<select value={inicio} onChange={(e) => { setInicio(e.target.value); if (e.target.value >= '2024-01') setMeses(12) }} className="block h-11 rounded-lg border border-neutral-400 px-2">
           {INICIOS.map((x) => <option key={x}>{x}</option>)}
         </select></label>
@@ -54,10 +54,11 @@ export default function Evaluar() {
           </table>
           <p className="text-xs text-neutral-600">Ventana: {res.r.desde} a {res.r.hasta} (sin incluir el último mes). Fuente: SSC, choques a 50 m de cada corredor.</p>
           <section className="tarjeta border-2 border-verde" aria-live="polite">
-            <p className="text-sm font-semibold">Cambio relativo (calcomanía vs control)</p>
-            <p className="text-4xl font-extrabold">{res.r.razon < 1 ? '−' : '+'}{Math.abs(Math.round((res.r.razon - 1) * 100))}%</p>
-            <p className="mt-1">El azar, repartiendo las mismas rutas al revés 1,000 veces, da entre <b>{Math.round((res.iv.bajo - 1) * 100)}%</b> y <b>+{Math.round((res.iv.alto - 1) * 100)}%</b>.</p>
-            <p className="mt-2 font-bold">{lecturaEvaluacion(res.r.razon, res.iv)}</p>
+            <p className="text-sm font-semibold">Veredicto</p>
+            <p className="text-xl font-extrabold">{lecturaEvaluacion(res.r.razon, res.iv)}</p>
+            <p className="mt-3 text-sm font-semibold">Diferencia de las rutas con calcomanía contra las de control</p>
+            <p className="text-3xl font-extrabold text-neutral-700">{res.r.razon < 1 ? '−' : '+'}{Math.abs(Math.round((res.r.razon - 1) * 100))}%</p>
+            <p className="mt-1">Si repartes las mismas rutas al azar 1,000 veces, sin calcomanías, esa diferencia sale sola entre <b>{Math.round((res.iv.bajo - 1) * 100)}%</b> y <b>+{Math.round((res.iv.alto - 1) * 100)}%</b>. Para creerle a un resultado, tiene que salir de ese rango.</p>
             <p className="text-xs text-neutral-600 mt-2"><span className="etiqueta">PRUEBA DE PERMUTACIÓN</span> corre en tu navegador sobre los datos abiertos.</p>
           </section>
         </>

@@ -82,12 +82,12 @@ export default function Colocar() {
         <span className="font-semibold">Código del programa</span>
         <input type="password" autoComplete="off" maxLength={64} value={codigo} onChange={(e) => setCodigo(e.target.value)}
           className="mt-1 block h-11 w-full max-w-xs rounded-lg border border-neutral-400 px-3" />
-        <span className="text-xs text-neutral-600">Lo da quien coordina el programa. Sin código no se guarda nada.</span>
+        <span className="text-xs text-neutral-600">Es la clave del programa, la tiene quien administra este sitio (si coordinas tú, pídela ahí). Sin código no se guarda nada.</span>
       </label>
 
       <section className="tarjeta space-y-3">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="etiqueta">VISIÓN EN EL TELÉFONO</span>
+          <span className="etiqueta">LA CÁMARA LEE EL QR</span>
           <span className="text-sm">La cámara lee el QR aquí mismo; ninguna imagen sale del teléfono.</span>
         </div>
         <video ref={video} playsInline muted className={`w-full rounded-lg bg-black ${camara ? '' : 'hidden'}`} />

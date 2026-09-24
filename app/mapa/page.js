@@ -41,7 +41,7 @@ export default function PaginaMapa() {
       <section>
         <div className="flex items-baseline justify-between gap-2 flex-wrap">
           <h2 className="text-xl font-bold">Rutas con más riesgo</h2>
-          <span className="etiqueta">MODELO ESTADÍSTICO · Empirical Bayes</span>
+          <span className="etiqueta">MODELO ESTADÍSTICO (corrige la suerte)</span>
         </div>
         <p className="text-sm text-neutral-700 mt-1 max-w-3xl">
           «Riesgo en exceso» = cuántos choques más de los que se esperarían para una ruta de ese largo, corrigiendo la suerte de rutas con pocos datos.

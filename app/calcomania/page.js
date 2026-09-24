@@ -58,6 +58,7 @@ export default function PaginaCalcomania() {
           </label>
           <button className="boton" onClick={() => window.print()} disabled={!loteOk}>Imprimir</button>
         </div>
+        <p className="text-sm text-neutral-700">Lote = la tanda de impresión (L01, L02…). Sirve para saber qué impresión se pegó en cada ruta; no identifica unidades ni choferes.</p>
         {!loteOk && <p className="text-rojo text-sm">El lote solo puede tener letras, números y guiones (hasta 12).</p>}
       </div>
       {loteOk && ruta && (
