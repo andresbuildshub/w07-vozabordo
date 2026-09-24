@@ -13,6 +13,6 @@
 - 2026-09-23 — Measure on SSC "hechos de tránsito" (vehicle type MICROBUS), not C5 "incidentes viales" — C5's data dictionary has no vehicle-type field (checked 09-23); the fight's worry confirmed.
 - 2026-09-23 — No telemetry, no complaint channel, QR = route + batch only — brief's shadow decisions (phone-off = confession; passenger rating = the Uber rating).
 - 2026-09-23 — Build before the T7 Blueprint, from the brief's surviving slice — course allows "their own surviving idea"; conditions table gets remapped when the Blueprint exists.
-- 2026-09-23 — Print CSS: 2×2 grid filling the letter page, big type, QR 42 mm — mechanical pass (Playwright page.pdf) showed the 4 stickers using only the top 40% of the sheet, too small to read in a moving micro.
+- 2026-09-23 — Print CSS: 2×2 grid, rows fixed at 122 mm, QR 36 mm (first try with 1fr rows overflowed to 2 pages, 2 per page) — mechanical pass (Playwright page.pdf) showed the 4 stickers using only the top 40% of the sheet, too small to read in a moving micro.
 - 2026-09-23 — Map: top-10 routes thick red and drawn last, other 82 thin/translucent — screenshot at 390 px showed the red routes buried under orange, so the legend's promise wasn't visible.
 - 2026-09-23 — `.vercelignore` for `data-raw` — first prod deploy failed: CLI uploads the local folder, including the raw-data symlink.
