@@ -2,7 +2,7 @@
 
 > Session close ritual, every session: one line per decision with the why, tomorrow's first move at the top, commit, push. This file is where the Week 12 Extraction gets mined from.
 
-**Tomorrow's first move:** (filled at session close)
+**Tomorrow's first move:** when the T7 Blueprint exists, map its conditions into PACKET.md's table and change the app wherever one isn't honored; then decide with the team whether vulnerable-user (repartidores, 17,391 motos in 2024 SSC crashes vs 368 microbuses) beats this slice on measurability.
 
 ---
 
