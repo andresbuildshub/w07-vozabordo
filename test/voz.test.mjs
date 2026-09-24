@@ -53,6 +53,9 @@ test('(d) QR payload: valid, unknown route, bad batch, foreign QR', () => {
   assert.throws(() => parseQR('VAB|NOEXISTE|L01', rutas), /no está/)
   assert.throws(() => parseQR('VAB|6A|l01; DROP', rutas), /Lote/)
   assert.throws(() => parseQR('https://example.com', rutas), /no es de Voz a Bordo/)
+  const url = textoQR('Z3H', 'L02', 'https://w07-vozabordo.vercel.app')
+  assert.match(url, /\/a-bordo#VAB/)
+  assert.deepEqual(parseQR(url, rutas), { ruta: 'Z3H', lote: 'L02' })
 })
 
 test('(e) the stored record has exactly {ruta, lote, fecha}', () => {
