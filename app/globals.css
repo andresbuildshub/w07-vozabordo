@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme {
+  --color-papel: #fffdf8;
+  --color-tinta: #1d1d1f;
+  --color-verde: #14352b;
+  --color-rojo: #b23a1f;
+  --color-naranja: #e08a2e;
+  --color-amarillo: #ffd84a;
+  --color-arena: #efe9dc;
+}
+
+html, body { background: var(--color-papel); color: var(--color-tinta); }
+.etiqueta { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.02em; padding:2px 7px; border-radius:6px; background:#f6e3a1; color:#5a4500; }
+.etiqueta-roja { background:#f7d4cb; color:#7a2410; }
+.tarjeta { background:#fff; border:1px solid #e3dccb; border-radius:14px; padding:14px; }
+.boton { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 16px; border-radius:22px; font-weight:600; background:var(--color-verde); color:#fff; }
+.boton-sec { background:#fff; color:var(--color-verde); border:1.5px solid var(--color-verde); }
+.opcion { min-height:40px; padding:0 14px; border-radius:20px; border:1.5px solid var(--color-verde); font-size:14px; }
+.opcion[aria-pressed="true"] { background:var(--color-verde); color:#fff; }
+@media print {
+  header, footer, .no-imprimir { display:none !important; }
+  body { background:#fff; }
+}
