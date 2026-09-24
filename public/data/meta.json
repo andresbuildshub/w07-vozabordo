@@ -1,0 +1,454 @@
+{
+ "kmin": 11,
+ "eligible": 92,
+ "years": [
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "n_events": 3107,
+ "n_on_routes": 1374,
+ "buffer_m": 50,
+ "lambda_km_yr": 0.1002,
+ "k": 1.0566,
+ "routes": 137,
+ "hotspots": [
+  {
+   "lat": 19.49371,
+   "lon": -99.12029,
+   "n": 32,
+   "hurt": 46,
+   "dead": 4,
+   "corner": "Av Insurgentes / Calz Ticoman"
+  },
+  {
+   "lat": 19.41983,
+   "lon": -99.09613,
+   "n": 22,
+   "hurt": 30,
+   "dead": 1,
+   "corner": "Calz Gral Ignacio Zaragoza / Calz Gral Ignacio Zaragoza"
+  },
+  {
+   "lat": 19.40499,
+   "lon": -99.07026,
+   "n": 21,
+   "hurt": 29,
+   "dead": 0,
+   "corner": "Calz Gral Ignacio Zaragoza / Eje 5 Ote"
+  },
+  {
+   "lat": 19.41109,
+   "lon": -99.081,
+   "n": 17,
+   "hurt": 18,
+   "dead": 1,
+   "corner": "Calz Gral Ignacio Zaragoza / Calle 65"
+  },
+  {
+   "lat": 19.35768,
+   "lon": -99.1219,
+   "n": 15,
+   "hurt": 14,
+   "dead": 1,
+   "corner": "Eje 8 Sur / Calz De La Viga"
+  },
+  {
+   "lat": 19.41436,
+   "lon": -99.08691,
+   "n": 15,
+   "hurt": 19,
+   "dead": 0,
+   "corner": "Calz Gral Ignacio Zaragoza / Calle 47"
+  },
+  {
+   "lat": 19.25538,
+   "lon": -99.10515,
+   "n": 13,
+   "hurt": 22,
+   "dead": 0,
+   "corner": "Cam A Nativitas / 5 De Mayo"
+  },
+  {
+   "lat": 19.50196,
+   "lon": -99.2046,
+   "n": 13,
+   "hurt": 16,
+   "dead": 0,
+   "corner": "Av Aquiles Serdan / Av El Rosario"
+  },
+  {
+   "lat": 19.50147,
+   "lon": -99.11771,
+   "n": 13,
+   "hurt": 48,
+   "dead": 2,
+   "corner": "Av Insurgentes / Av Acueducto De Guadalupe"
+  },
+  {
+   "lat": 19.40925,
+   "lon": -99.0774,
+   "n": 12,
+   "hurt": 16,
+   "dead": 0,
+   "corner": "Calz Gral Ignacio Zaragoza / Eje 4 Ote"
+  },
+  {
+   "lat": 19.42692,
+   "lon": -99.10947,
+   "n": 11,
+   "hurt": 11,
+   "dead": 1,
+   "corner": "Calz Gral Ignacio Zaragoza / Fco Espejel"
+  },
+  {
+   "lat": 19.42178,
+   "lon": -99.09955,
+   "n": 11,
+   "hurt": 16,
+   "dead": 0,
+   "corner": "Calz Gral Ignacio Zaragoza / Av Jesus Galindo Y Villa"
+  },
+  {
+   "lat": 19.39095,
+   "lon": -99.04575,
+   "n": 11,
+   "hurt": 37,
+   "dead": 0,
+   "corner": "Calz Gral Ignacio Zaragoza / Av Telecomunicaciones"
+  },
+  {
+   "lat": 19.38497,
+   "lon": -99.03573,
+   "n": 11,
+   "hurt": 15,
+   "dead": 0,
+   "corner": "Calz Gral Ignacio Zaragoza / Batallon De Zacapoaxtla"
+  },
+  {
+   "lat": 19.41473,
+   "lon": -99.07331,
+   "n": 10,
+   "hurt": 14,
+   "dead": 0,
+   "corner": "Eje 1 Nte / Eje 1 Nte"
+  },
+  {
+   "lat": 19.33796,
+   "lon": -99.10884,
+   "n": 10,
+   "hurt": 11,
+   "dead": 1,
+   "corner": "Av Tlahuac / Calz Taxqueña"
+  },
+  {
+   "lat": 19.37307,
+   "lon": -99.0162,
+   "n": 10,
+   "hurt": 12,
+   "dead": 0,
+   "corner": "Calz Gral Ignacio Zaragoza / Av Rep Fed"
+  },
+  {
+   "lat": 19.26597,
+   "lon": -98.99924,
+   "n": 9,
+   "hurt": 16,
+   "dead": 0,
+   "corner": "Calz Tlahuac Chalco / Av Acueducto"
+  },
+  {
+   "lat": 19.41755,
+   "lon": -99.07119,
+   "n": 9,
+   "hurt": 15,
+   "dead": 0,
+   "corner": "Eje 4 Ote / Av Union"
+  },
+  {
+   "lat": 19.41812,
+   "lon": -99.09378,
+   "n": 9,
+   "hurt": 20,
+   "dead": 0,
+   "corner": "Calz Gral Ignacio Zaragoza / Calle 13"
+  },
+  {
+   "lat": 19.31129,
+   "lon": -99.124,
+   "n": 9,
+   "hurt": 9,
+   "dead": 1,
+   "corner": "Calz De Las Bombas / Calz De Las Bombas"
+  },
+  {
+   "lat": 19.31473,
+   "lon": -99.07106,
+   "n": 9,
+   "hurt": 13,
+   "dead": 1,
+   "corner": "Av Tlahuac / Av Jose Clemente Orozco"
+  },
+  {
+   "lat": 19.39807,
+   "lon": -99.05859,
+   "n": 8,
+   "hurt": 19,
+   "dead": 0,
+   "corner": "Calz Gral Ignacio Zaragoza / Anillo Periferico"
+  },
+  {
+   "lat": 19.42084,
+   "lon": -99.05979,
+   "n": 8,
+   "hurt": 19,
+   "dead": 0,
+   "corner": "Eje 4 Ote / Calle 5"
+  },
+  {
+   "lat": 19.34116,
+   "lon": -99.13746,
+   "n": 8,
+   "hurt": 8,
+   "dead": 0,
+   "corner": "Canal De Miramontes / Calz Taxqueña"
+  }
+ ],
+ "power": [
+  {
+   "routes": 10,
+   "effect": 0.25,
+   "years_after": 1,
+   "power": 0.17
+  },
+  {
+   "routes": 10,
+   "effect": 0.25,
+   "years_after": 2,
+   "power": 0.19
+  },
+  {
+   "routes": 10,
+   "effect": 0.33,
+   "years_after": 1,
+   "power": 0.25
+  },
+  {
+   "routes": 10,
+   "effect": 0.33,
+   "years_after": 2,
+   "power": 0.33
+  },
+  {
+   "routes": 10,
+   "effect": 0.5,
+   "years_after": 1,
+   "power": 0.47
+  },
+  {
+   "routes": 10,
+   "effect": 0.5,
+   "years_after": 2,
+   "power": 0.6
+  },
+  {
+   "routes": 20,
+   "effect": 0.25,
+   "years_after": 1,
+   "power": 0.24
+  },
+  {
+   "routes": 20,
+   "effect": 0.25,
+   "years_after": 2,
+   "power": 0.3
+  },
+  {
+   "routes": 20,
+   "effect": 0.33,
+   "years_after": 1,
+   "power": 0.36
+  },
+  {
+   "routes": 20,
+   "effect": 0.33,
+   "years_after": 2,
+   "power": 0.48
+  },
+  {
+   "routes": 20,
+   "effect": 0.5,
+   "years_after": 1,
+   "power": 0.71
+  },
+  {
+   "routes": 20,
+   "effect": 0.5,
+   "years_after": 2,
+   "power": 0.83
+  },
+  {
+   "routes": 30,
+   "effect": 0.25,
+   "years_after": 1,
+   "power": 0.27
+  },
+  {
+   "routes": 30,
+   "effect": 0.25,
+   "years_after": 2,
+   "power": 0.41
+  },
+  {
+   "routes": 30,
+   "effect": 0.33,
+   "years_after": 1,
+   "power": 0.47
+  },
+  {
+   "routes": 30,
+   "effect": 0.33,
+   "years_after": 2,
+   "power": 0.59
+  },
+  {
+   "routes": 30,
+   "effect": 0.5,
+   "years_after": 1,
+   "power": 0.8
+  },
+  {
+   "routes": 30,
+   "effect": 0.5,
+   "years_after": 2,
+   "power": 0.93
+  },
+  {
+   "routes": 40,
+   "effect": 0.25,
+   "years_after": 1,
+   "power": 0.32
+  },
+  {
+   "routes": 40,
+   "effect": 0.25,
+   "years_after": 2,
+   "power": 0.4
+  },
+  {
+   "routes": 40,
+   "effect": 0.33,
+   "years_after": 1,
+   "power": 0.49
+  },
+  {
+   "routes": 40,
+   "effect": 0.33,
+   "years_after": 2,
+   "power": 0.63
+  },
+  {
+   "routes": 40,
+   "effect": 0.5,
+   "years_after": 1,
+   "power": 0.82
+  },
+  {
+   "routes": 40,
+   "effect": 0.5,
+   "years_after": 2,
+   "power": 0.95
+  },
+  {
+   "routes": 60,
+   "effect": 0.25,
+   "years_after": 1,
+   "power": 0.37
+  },
+  {
+   "routes": 60,
+   "effect": 0.25,
+   "years_after": 2,
+   "power": 0.48
+  },
+  {
+   "routes": 60,
+   "effect": 0.33,
+   "years_after": 1,
+   "power": 0.54
+  },
+  {
+   "routes": 60,
+   "effect": 0.33,
+   "years_after": 2,
+   "power": 0.65
+  },
+  {
+   "routes": 60,
+   "effect": 0.5,
+   "years_after": 1,
+   "power": 0.92
+  },
+  {
+   "routes": 60,
+   "effect": 0.5,
+   "years_after": 2,
+   "power": 0.97
+  },
+  {
+   "routes": 92,
+   "effect": 0.25,
+   "years_after": 1,
+   "power": 0.38
+  },
+  {
+   "routes": 92,
+   "effect": 0.25,
+   "years_after": 2,
+   "power": 0.45
+  },
+  {
+   "routes": 92,
+   "effect": 0.33,
+   "years_after": 1,
+   "power": 0.59
+  },
+  {
+   "routes": 92,
+   "effect": 0.33,
+   "years_after": 2,
+   "power": 0.75
+  },
+  {
+   "routes": 92,
+   "effect": 0.5,
+   "years_after": 1,
+   "power": 0.93
+  },
+  {
+   "routes": 92,
+   "effect": 0.5,
+   "years_after": 2,
+   "power": 0.99
+  }
+ ],
+ "placebo": {
+  "treated_pre": 71,
+  "treated_post": 69,
+  "control_pre": 79,
+  "control_post": 62,
+  "ratio": 1.238,
+  "null_lo": 0.668,
+  "null_hi": 1.465,
+  "seed": 2041,
+  "start": "2023-07-01"
+ },
+ "sources": {
+  "ssc": "datos.cdmx.gob.mx — Hechos de tránsito registrados por la SSC (serie ampliada 2018–2023 y 2024), tabla de vehículos involucrados, tipo_vehiculo=MICROBUS",
+  "gtfs": "datos.cdmx.gob.mx — GTFS estático CDMX (16-feb-2026), agency_id=CC (Corredores Concesionados)"
+ }
+}

@@ -1,3 +1,12 @@
+"""Voz a Bordo — build public/data/*.json from CDMX open data. Run: python scripts/build_data.py
+Inputs in data-raw/ (not committed, public downloads from datos.cdmx.gob.mx):
+  gtfs/  <- GTFS estático CDMX (unzip) · dataset "gtfs"
+  veh.csv, hechos.csv     <- "Hechos de tránsito registrados por la SSC (serie ampliada, no comparativa)": Vehículos involucrados / Hechos (2018-2023)
+  veh24.csv, hechos24.csv <- same, 2024 file
+Method: microbús crashes (tipo_vehiculo=MICROBUS) snapped to the nearest concession-corridor route (agency CC) within 50 m;
+Empirical Bayes (exposure = km, NB overdispersion by moments); DBSCAN hotspots (120 m, 8); Monte Carlo power (DiD, permutation test);
+placebo on real data (seed 2041, fake start 2023-07-01). Units per route = ceil(sum trip durations / min headway); >150 = implausible -> None.
+"""
 import pandas as pd, numpy as np, json, math
 from shapely.geometry import LineString, Point
 from shapely.ops import transform, unary_union
