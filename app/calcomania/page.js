@@ -8,10 +8,10 @@ function Calcomania({ corta, lote, qr }) {
   return (
     <div className="calco rounded-2xl border-[3px] border-tinta bg-amarillo p-4 flex gap-3 items-start break-inside-avoid">
       <div className="flex-1">
-        <p className="text-2xl font-extrabold leading-tight">¿Va muy rápido?</p>
-        <p className="mt-1 text-lg leading-snug">Tienes derecho a decirle:<br /><b>«Más despacio, por favor.»</b></p>
-        <p className="mt-1 text-lg">Aquí todos vamos igual.</p>
-        <p className="mt-2 text-[11px] leading-tight">Ruta {corta} · Lote {lote} · Nadie registra quién habla ni en qué unidad. No es un número de quejas.</p>
+        <p className="t1 text-2xl font-extrabold leading-tight">¿Va muy rápido?</p>
+        <p className="t2 mt-1 text-lg leading-snug">Tienes derecho a decirle:<br /><b>«Más despacio, por favor.»</b></p>
+        <p className="t2 mt-1 text-lg">Aquí todos vamos igual.</p>
+        <p className="t3 mt-2 text-[11px] leading-tight">Ruta {corta} · Lote {lote} · Nadie registra quién habla ni en qué unidad. No es un número de quejas.</p>
       </div>
       {qr && <img src={qr} alt={`Código QR ruta ${corta}, lote ${lote}`} className="w-24 h-24 bg-white p-1 rounded" />}
     </div>
@@ -61,7 +61,7 @@ export default function PaginaCalcomania() {
         {!loteOk && <p className="text-rojo text-sm">El lote solo puede tener letras, números y guiones (hasta 12).</p>}
       </div>
       {loteOk && ruta && (
-        <div className="grid gap-4 sm:grid-cols-2 print:grid-cols-2">
+        <div className="hoja grid gap-4 sm:grid-cols-2">
           {[0, 1, 2, 3].map((i) => <Calcomania key={i} corta={corta} lote={lote} qr={qr} />)}
         </div>
       )}

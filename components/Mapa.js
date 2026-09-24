@@ -24,8 +24,8 @@ export default function Mapa({ geo, choques, hotspots, seleccion, onSeleccion })
       }
       const capas = {}
       const estilo = (p) => p.eligible
-        ? { color: p.rank <= 10 ? '#b23a1f' : '#e08a2e', weight: p.rank <= 10 ? 4 : 2.5, opacity: 0.85 }
-        : { color: '#8a8f89', weight: 1.5, opacity: 0.6, dashArray: '4 4' }
+        ? (p.rank <= 10 ? { color: '#b23a1f', weight: 5, opacity: 0.95 } : { color: '#e08a2e', weight: 1.5, opacity: 0.45 })
+        : { color: '#8a8f89', weight: 1.2, opacity: 0.5, dashArray: '4 4' }
       L.geoJSON(geo, {
         style: (f) => estilo(f.properties),
         onEachFeature: (f, capa) => {
@@ -33,6 +33,8 @@ export default function Mapa({ geo, choques, hotspots, seleccion, onSeleccion })
           capa.on('click', () => onSeleccion?.(f.properties.id))
         },
       }).addTo(mapa)
+      // top-10 drawn last so the other 82 routes never cover them
+      for (const c of Object.values(capas)) if (c.feature.properties.eligible && c.feature.properties.rank <= 10) c.bringToFront()
       for (const h of hotspots) {
         L.circle([h.lat, h.lon], { radius: 160, color: '#b23a1f', weight: 2, dashArray: '5 4', fill: false })
           .bindTooltip(`${h.corner}: ${h.n} choques con microbús`).addTo(mapa)

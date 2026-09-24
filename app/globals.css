@@ -19,6 +19,12 @@ html, body { background: var(--color-papel); color: var(--color-tinta); }
 .opcion { min-height:40px; padding:0 14px; border-radius:20px; border:1.5px solid var(--color-verde); font-size:14px; }
 .opcion[aria-pressed="true"] { background:var(--color-verde); color:#fff; }
 @media print {
+  @page { size: letter; margin: 10mm; }
   header, footer, .no-imprimir { display:none !important; }
   body { background:#fff; }
+  main { padding:0 !important; max-width:none !important; }
+  .hoja { display:grid !important; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:8mm; height:calc(279mm - 20mm - 1px); }
+  .calco { height:100%; flex-direction:column; justify-content:space-between; padding:9mm !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .calco .t1 { font-size:30pt; } .calco .t2 { font-size:20pt; } .calco .t3 { font-size:9pt; }
+  .calco img { width:42mm !important; height:42mm !important; align-self:flex-end; }
 }
