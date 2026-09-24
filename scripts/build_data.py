@@ -132,10 +132,10 @@ for r in routes:
     else: gj['coordinates']=[[rnd(c) for c in l] for l in gj['coordinates']]
     props={k:v for k,v in r.items() if k!='geo'}
     feats.append(dict(type='Feature',geometry=gj,properties=props))
-json.dump(dict(type='FeatureCollection',features=feats),open(OUT+'rutas.json','w'),separators=(',',':'))
+json.dump(dict(type='FeatureCollection',features=feats),open(OUT+'rutas.json','w'),separators=(',',':'),allow_nan=False)
 M['ym']=M.fecha.str[:7]
-cr=[[round(a,5),round(b,5),ym,int(h or 0),int(dd or 0),rt] for a,b,ym,h,dd,rt in zip(M.latitud,M.longitud,M.ym,M.personas_lesionadas.fillna(0),M.personas_fallecidas.fillna(0),M.route)]
-json.dump(cr,open(OUT+'choques.json','w'),separators=(',',':'))
+cr=[[round(a,5),round(b,5),ym,int(h or 0),int(dd or 0),(rt if isinstance(rt,str) else None)] for a,b,ym,h,dd,rt in zip(M.latitud,M.longitud,M.ym,M.personas_lesionadas.fillna(0),M.personas_fallecidas.fillna(0),M.route)]
+json.dump(cr,open(OUT+'choques.json','w'),separators=(',',':'),allow_nan=False)
 meta=dict(kmin=KMIN,eligible=len(ELIG),years=YRS,n_events=len(M),n_on_routes=int(M.route.notna().sum()),buffer_m=BUF,lambda_km_yr=round(lam,4),k=round(k,4),routes=len(routes),hotspots=hs[:25],power=PW,placebo={k:(float(v) if isinstance(v,(np.floating,)) else v) for k,v in PL.items()},
   sources=dict(ssc='datos.cdmx.gob.mx — Hechos de tránsito registrados por la SSC (serie ampliada 2018–2023 y 2024), tabla de vehículos involucrados, tipo_vehiculo=MICROBUS',gtfs='datos.cdmx.gob.mx — GTFS estático CDMX (16-feb-2026), agency_id=CC (Corredores Concesionados)'))
 json.dump(meta,open(OUT+'meta.json','w'),ensure_ascii=False,indent=1)
