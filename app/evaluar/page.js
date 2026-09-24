@@ -48,7 +48,7 @@ export default function Evaluar() {
           <table className="w-full text-sm tarjeta p-0 overflow-hidden">
             <thead className="bg-arena text-left"><tr><th className="p-2">Choques con microbús</th><th className="p-2">Antes</th><th className="p-2">Después</th></tr></thead>
             <tbody>
-              <tr className="border-t border-arena"><td className="p-2 font-semibold">Rutas con calcomanía ({res.a.calcomania.length})</td><td className="p-2">{res.r.tPre}</td><td className="p-2">{res.r.tPost}</td></tr>
+              <tr className="border-t border-arena"><td className="p-2 font-semibold">Grupo «calcomanía» ({res.a.calcomania.length} rutas; aquí no se pegó nada)</td><td className="p-2">{res.r.tPre}</td><td className="p-2">{res.r.tPost}</td></tr>
               <tr className="border-t border-arena"><td className="p-2">Rutas control ({res.a.control.length})</td><td className="p-2">{res.r.cPre}</td><td className="p-2">{res.r.cPost}</td></tr>
             </tbody>
           </table>
@@ -56,8 +56,10 @@ export default function Evaluar() {
           <section className="tarjeta border-2 border-verde" aria-live="polite">
             <p className="text-sm font-semibold">Veredicto</p>
             <p className="text-xl font-extrabold">{lecturaEvaluacion(res.r.razon, res.iv)}</p>
-            <p className="mt-3 text-sm font-semibold">Diferencia de las rutas con calcomanía contra las de control</p>
-            <p className="text-3xl font-extrabold text-neutral-700">{res.r.razon < 1 ? '−' : '+'}{Math.abs(Math.round((res.r.razon - 1) * 100))}%</p>
+            <p className="mt-3">
+              Las rutas del grupo «calcomanía» tuvieron <b>{Math.abs(Math.round((res.r.razon - 1) * 100))}% {res.r.razon < 1 ? 'menos' : 'más'} choques</b> que las de control, comparado con antes
+              {' '}(en este ensayo sin calcomanías, eso es puro azar).
+            </p>
             <p className="mt-1">Si repartes las mismas rutas al azar 1,000 veces, sin calcomanías, esa diferencia sale sola entre <b>{Math.round((res.iv.bajo - 1) * 100)}%</b> y <b>+{Math.round((res.iv.alto - 1) * 100)}%</b>. Para creerle a un resultado, tiene que salir de ese rango.</p>
             <p className="text-xs text-neutral-600 mt-2"><span className="etiqueta">PRUEBA DE PERMUTACIÓN</span> corre en tu navegador sobre los datos abiertos.</p>
           </section>

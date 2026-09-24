@@ -80,7 +80,7 @@ export default function Plan() {
         <div className="mt-3 rounded-lg bg-arena p-3 text-sm">
           <p className="font-bold">Lo que tienes que decirle a quien decide</p>
           <ul className="list-disc pl-5 mt-1 space-y-1">
-            <li>Con la baja realista (−25%), <b>ni con las {d.meta.eligible} rutas y 2 años</b> la probabilidad llega a la mitad. Solo bajas grandes se ven con claridad.</li>
+            <li>Con la baja realista (−25%), incluso metiendo las {d.meta.eligible} rutas y esperando 2 años, <b>la probabilidad de notarlo se queda por debajo de 50%</b>. Solo bajas grandes se ven con claridad.</li>
             <li>Más de la mitad de los choques con microbús pasan en rutas que no están en los datos abiertos: este programa solo mide los corredores.</li>
             <li>No hay evidencia en México de que los pasajeros se animen a hablarle al chofer (en el Edomex, 8 de cada 10 robos en transporte son con violencia). Lo primero que un piloto real tendría que averiguar es eso.</li>
           </ul>
@@ -103,6 +103,14 @@ export default function Plan() {
             {' '}Las marcadas con ● están entre las 10 rojas del mapa.
           </p>
         )}
+        <details className="mt-2 max-w-3xl tarjeta">
+          <summary className="font-semibold cursor-pointer">¿Por qué hay rutas rojas (●) en Control, sin calcomanía?</summary>
+          <p className="mt-2 text-sm">
+            Para comparar bien, cada ruta peligrosa necesita una pareja igual de peligrosa sin calcomanía. Las rutas que tuvieron un año muy malo
+            suelen tener uno menos malo después, con o sin calcomanía. Si todas las rojas llevaran calcomanía, no sabrías si bajaron por la calcomanía
+            o solo porque regresaron a lo normal. <b>Al terminar la medición, las rutas de control reciben su calcomanía.</b>
+          </p>
+        </details>
         <label className="block mt-3 font-semibold" htmlFor="semilla">Número del sorteo</label>
         <input id="semilla" inputMode="numeric" maxLength={9} value={semillaTxt} onChange={(e) => setSemillaTxt(e.target.value.replace(/\D/g, ''))}
           className="mt-1 h-11 w-40 rounded-lg border border-neutral-400 px-3" aria-describedby="semilla-ayuda" />

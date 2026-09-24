@@ -51,7 +51,7 @@ flowchart TD
   I -->|yes| K[Random assignment with a visible seed: sticker vs control, in pairs by rank]
   K --> L[/calcomania: print — QR = route + batch, nothing more/]
   L --> M[/colocar: program code → camera reads the QR on the phone → +1 on that route/]
-  M --> N[/evaluar: before/after sticker vs control on the ledger]
+  M --> N["/evaluar: before/after, sticker vs control, on the ledger"]
   N --> O[Permutation interval: is the difference bigger than chance?]
   O --> P[By default: PLACEBO — what 'no effect' looks like]
 ```
@@ -142,7 +142,7 @@ If this slice works, in three years Voz a Bordo is the protocol by which CDMX (a
 **Mechanical** (`node --test` over `lib/` + Playwright against production at 390 px and 1280 px):
 - a) `asignar(routes, seed)` is deterministic: same seed → same list; each pair has one sticker and one control; no ineligible route shows up.
 - b) `potencia(N, effect, years)` returns the value from the precomputed table (closest N, never extrapolated); N > 92 → "there aren't that many eligible routes."
-- c) `evaluar()` with the placebo (seed 2041, start 2023-07-01) gives a ratio of 1.24 inside the interval → "we can't tell it apart from chance."
+- c) `evaluar()` with the placebo (top-40, seed 2041, fake start 2023-07, 12 months) falls inside the permutation interval → "we can't tell it apart from chance." (The Python placebo, with a different random generator, gives a ratio of 1.24 inside 0.67–1.47.)
 - d) The QR `VAB|6A|L01` decodes to route 6A, batch L01; a QR with a nonexistent route or a bad batch gets rejected; a wrong code → 401 and nothing is stored.
 - e) The stored JSON has exactly the keys `{route, batch, date}`.
 - f) `/mapa` at 390 px: the map and the ranking fit without horizontal scroll.
